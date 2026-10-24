@@ -1,0 +1,68 @@
+{
+  "stage": 0,
+  "generated_at": "2026-10-17T21:06:55.779179+00:00",
+  "budget_usd_ceiling": 4.0,
+  "openai_text_base_url": null,
+  "langsmith_key_present": true,
+  "probes": [
+    {
+      "role": "A",
+      "model": "gpt-5.6-luna",
+      "ok": true,
+      "latency_ms": 3343,
+      "preview": "pong",
+      "error": null,
+      "usage": {
+        "prompt_tokens": 18,
+        "completion_tokens": 18,
+        "total_tokens": 36
+      },
+      "estimated_usd": 2.52e-05
+    },
+    {
+      "role": "B",
+      "model": "gpt-6-luna",
+      "ok": true,
+      "latency_ms": 1267,
+      "preview": "pong",
+      "error": null,
+      "usage": {
+        "prompt_tokens": 18,
+        "completion_tokens": 19,
+        "total_tokens": 37
+      },
+      "estimated_usd": 1.13e-05
+    },
+    {
+      "role": "judge",
+      "model": "gpt-5-mini",
+      "ok": true,
+      "latency_ms": 1325,
+      "preview": "pong",
+      "error": null,
+      "usage": {
+        "prompt_tokens": 18,
+        "completion_tokens": 10,
+        "total_tokens": 28
+      },
+      "estimated_usd": 2.45e-05
+    }
+  ],
+  "pilot_projection": {
+    "method": "scaled_from_probe",
+    "scale_factor": 8.0,
+    "projected_usd": {
+      "translate_A_60": 0.0121,
+      "translate_B_60": 0.0054,
+      "judge_60": 0.0118,
+      "total_plus_buffer_0_25": 0.2793
+    },
+    "under_usd_4": true
+  },
+  "gates": {
+    "all_models_ok": true,
+    "ready_for_dataset_drafts": true,
+    "langsmith_configured": false,
+    "langsmith_key_present": true
+  }
+}

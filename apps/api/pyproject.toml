@@ -1,0 +1,66 @@
+[project]
+name = "decime-api"
+version = "0.1.0"
+description = "Decime UY FastAPI backend"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115.0",
+  "uvicorn[standard]>=0.32.0",
+  "pydantic-settings>=2.6.0",
+  "email-validator>=2.2.0",
+  "openai>=2.45.0,<4",
+  "supabase>=2.11.0",
+  "python-multipart>=0.0.9",
+  "pyjwt>=2.10.0",
+  "bcrypt>=4.2.0",
+  "psycopg[binary]>=3.2.0",
+  "httpx>=0.27",
+  # Text LLM via LangChain ChatOpenAI (OpenAI + OpenAI-compatible APIs).
+  "langchain-core>=1.6.10,<2",
+  "langchain-openai>=1.7.2,<2",
+  "langsmith>=0.14.0,<1",
+]
+
+[project.optional-dependencies]
+local-stt = [
+  "faster-whisper>=1.1.0",
+]
+dev = [
+  "pytest>=8.0",
+  "pytest-asyncio>=0.25.0",
+  "httpx>=0.27",
+  # Pinned: CI installs the latest ruff. 0.17 made the former preview set the
+  # default (87 findings on 088d2ee). Unpinned ruff>=0.8 passes locally on 0.15
+  # and fails in GitHub Actions.
+  "ruff==0.17.1",
+  "openpyxl>=3.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/decime_api"]
+
+[tool.pytest.ini_options]
+testpaths = ["src/decime_api/tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+# Default suite excludes smoke_llm + eval via conftest (so `pytest -m eval` still works).
+markers = [
+  "unit: fast deterministic unit tests (no network)",
+  "integration: FastAPI / service tests with Fake providers",
+  "smoke_llm: live OpenAI smoke (needs credentials + DECIME_LLM_SMOKE=1)",
+  "eval: LLM evaluation runner opt-in (paid providers need keys; Fake covered in Stage 6 tests)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint.flake8-bugbear]
+# Depends/File are FastAPI dependency markers, evaluated once at import.
+# They are not mutable defaults. B008 still flags real function-call defaults.
+extend-immutable-calls = ["fastapi.Depends", "fastapi.File"]

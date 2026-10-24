@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "stage": 5,
+    "mode": "dry-run-2",
+    "suite": "ru_esuy_judge_v1",
+    "judge_model": "gpt-5-mini",
+    "model_a": "gpt-5.6-luna",
+    "model_b": "gpt-6-luna",
+    "case_ids": [
+      "judge-ru-01",
+      "judge-ru-02"
+    ],
+    "generated_at": "2026-10-17T23:15:14.338314+00:00",
+    "stage3_manifest": "evals/reports/pilot-2026-10/stage3/stage3-ru_esuy_judge_v1-manifest.json",
+    "langsmith": {
+      "project": "decime-eval-pilot",
+      "dataset": "decime-pilot-ru_esuy_judge_v1",
+      "experiment_a": "pilot-ru_esuy_judge_v1-A-20261017-2313-1f945468",
+      "experiment_b": "pilot-ru_esuy_judge_v1-B-20261017-2313-0bed45d0"
+    }
+  },
+  "measured": {
+    "judged_count": 4,
+    "error_count": 0,
+    "semantic_fidelity_mean": 4.5,
+    "judge_estimated_cost_usd": 0.010711
+  },
+  "cases": [
+    {
+      "case_id": "judge-ru-01",
+      "role": "A",
+      "candidate_model": "gpt-5.6-luna",
+      "recommended_reply": "Gracias por la invitación, pero el sábado de noche ya estoy ocupado; mejor el domingo después del mediodía, si a vos también te queda bien.",
+      "source_text": "Спасибо за приглашение, но в субботу вечером я уже занят — давайте лучше в воскресенье после обеда, если вам тоже удобно.",
+      "context": {
+        "target_locale": "es-UY-montevideo",
+        "channel": "whatsapp_text"
+      },
+      "judge": {
+        "semantic_fidelity": 5,
+        "uy_naturalness": 4,
+        "style_preservation": 4,
+        "no_additions_omissions": 5,
+        "critical_error": false,
+        "rationale": "The candidate preserves all factual content and the scheduling intent from the Russian: it declines Saturday evening and proposes Sunday afternoon, conditional on the other person's availability. The use of voseo (“a vos”) fits the es‑UY Montevideo target and the informal WhatsApp channel, so it’s an acceptable adaptation, though the original Russian used the polite/formal \"вам\" (a slight register shift toward informality). Phrasing choices like “sábado de noche” and “después del mediodía” are understandable but a bit less idiomatic than local alternatives (e.g. “el sábado por la noche” or “el sábado a la noche”, and “el domingo por la tarde” or “después del almuerzo”), which is why naturalness is not rated perfect. No facts were added or omitted.",
+        "error_category": "none",
+        "judge_model": "gpt-5-mini",
+        "usage": {
+          "model": "gpt-5-mini",
+          "prompt_tokens": 649,
+          "completion_tokens": 1330,
+          "total_tokens": 1979,
+          "input_cost_usd": 0.00016225,
+          "output_cost_usd": 0.00266,
+          "estimated_cost_usd": 0.00282225
+        },
+        "latency_ms": 16461
+      }
+    },
+    {
+      "case_id": "judge-ru-01",
+      "role": "B",
+      "candidate_model": "gpt-6-luna",
+      "recommended_reply": "Gracias por la invitación, pero el sábado de noche ya estoy ocupado; mejor el domingo después del mediodía, si a ustedes también les queda bien.",
+      "source_text": "Спасибо за приглашение, но в субботу вечером я уже занят — давайте лучше в воскресенье после обеда, если вам тоже удобно.",
+      "context": {
+        "target_locale": "es-UY-montevideo",
+        "channel": "whatsapp_text"
+      },
+      "judge": {
+        "semantic_fidelity": 5,
+        "uy_naturalness": 4,
+        "style_preservation": 5,
+        "no_additions_omissions": 5,
+        "critical_error": false,
+        "rationale": "The candidate preserves all facts and the polite intent of the Russian sentence: it declines the Saturday evening invitation as busy and proposes Sunday after midday, conditional on the recipients' convenience. Wording is natural Spanish overall, but there are small locale/style notes: \"sábado de noche\" and \"después del mediodía\" are perfectly understandable but slightly less idiomatic in Río de la Plata speech than \"el sábado por la noche\" and \"por la tarde\" or \"después del almuerzo.\" Using \"a ustedes\" is appropriate for plural/addressing people in Uruguay. These are minor phrasing choices; no information was added or omitted and the register is maintained.",
+        "error_category": "none",
+        "judge_model": "gpt-5-mini",
+        "usage": {
+          "model": "gpt-5-mini",
+          "prompt_tokens": 649,
+          "completion_tokens": 1108,
+          "total_tokens": 1757,
+          "input_cost_usd": 0.00016225,
+          "output_cost_usd": 0.002216,
+          "estimated_cost_usd": 0.00237825
+        },
+        "latency_ms": 12098
+      }
+    },
+    {
+      "case_id": "judge-ru-02",
+      "role": "A",
+      "candidate_model": "gpt-5.6-luna",
+      "recommended_reply": "Ya escribí tres veces por la canilla que pierde en la cocina y hasta ahora nadie vino. De verdad necesito ayuda hoy o, por lo menos, mañana de mañana.",
+      "source_text": "Я уже три раза писал про протекающий кран на кухне, и до сих пор никто не пришёл. Мне правда нужна помощь сегодня или хотя бы завтра утром.",
+      "context": {
+        "target_locale": "es-UY-montevideo",
+        "channel": "whatsapp_text",
+        "user_level": "A2"
+      },
+      "judge": {
+        "semantic_fidelity": 4,
+        "uy_naturalness": 3,
+        "style_preservation": 4,
+        "no_additions_omissions": 4,
+        "critical_error": false,
+        "rationale": "The candidate preserves the original meaning and urgency: the speaker has written three times about a leaking kitchen faucet and still no one has come, and they need help today or at least tomorrow morning. Small issues affect naturalness: “hasta ahora nadie vino” uses simple past instead of the more natural present perfect (e.g. “no ha venido”), but is understandable. “Por la canilla que pierde” is acceptable in Rioplatense Spanish (canilla is fine), though \"que gotea\" or \"que está goteando\" would sound more natural. The main problem is “mañana de mañana,” which is ungrammatical/unnatural for “tomorrow morning” (expected: “mañana por la mañana” or “mañana temprano”). No facts were added or omitted. Overall understandable for an A2 user but needs small phrasing fixes to sound natural in es-UY.",
+        "error_category": "unnatural_spanish",
+        "judge_model": "gpt-5-mini",
+        "usage": {
+          "model": "gpt-5-mini",
+          "prompt_tokens": 666,
+          "completion_tokens": 1268,
+          "total_tokens": 1934,
+          "input_cost_usd": 0.0001665,
+          "output_cost_usd": 0.002536,
+          "estimated_cost_usd": 0.0027025
+        },
+        "latency_ms": 13026
+      }
+    },
+    {
+      "case_id": "judge-ru-02",
+      "role": "B",
+      "candidate_model": "gpt-6-luna",
+      "recommended_reply": "Ya escribí tres veces por la canilla que pierde en la cocina y todavía no vino nadie. De verdad necesito ayuda hoy o por lo menos mañana de mañana.",
+      "source_text": "Я уже три раза писал про протекающий кран на кухне, и до сих пор никто не пришёл. Мне правда нужна помощь сегодня или хотя бы завтра утром.",
+      "context": {
+        "target_locale": "es-UY-montevideo",
+        "channel": "whatsapp_text",
+        "user_level": "A2"
+      },
+      "judge": {
+        "semantic_fidelity": 4,
+        "uy_naturalness": 3,
+        "style_preservation": 4,
+        "no_additions_omissions": 4,
+        "critical_error": false,
+        "rationale": "Overall the candidate preserves the original meaning and urgency: the speaker has written three times about a leaking kitchen tap and nobody has come yet, and they need help today or at least tomorrow morning. Small issues reduce the score: the final phrase “por lo menos mañana de mañana” is ungrammatical/redundant and makes the timing unclear, and “por la canilla que pierde” is slightly awkward though understandable (canilla is appropriate for Uruguay). No facts were added or omitted. Tone (informal, urgent) is kept.",
+        "error_category": "unnatural_spanish",
+        "judge_model": "gpt-5-mini",
+        "usage": {
+          "model": "gpt-5-mini",
+          "prompt_tokens": 664,
+          "completion_tokens": 1321,
+          "total_tokens": 1985,
+          "input_cost_usd": 0.000166,
+          "output_cost_usd": 0.002642,
+          "estimated_cost_usd": 0.002808
+        },
+        "latency_ms": 11236
+      }
+    }
+  ]
+}

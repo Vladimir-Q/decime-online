@@ -1,0 +1,86 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-decime}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-decime}
+      POSTGRES_DB: ${POSTGRES_DB:-decime}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      # SQL migrations: API startup (schema_migrations), not initdb — avoids duplicate apply.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-decime}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.api
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-decime}:${POSTGRES_PASSWORD:-decime}@postgres:5432/${POSTGRES_DB:-decime}
+      AUTH_ENABLED: "true"
+      APP_ENV: production
+      API_BASE_URL: ${PUBLIC_API_URL:-https://api.decime.online}
+      FRONTEND_BASE_URL: ${PUBLIC_WEB_URL:-https://decime.online}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - audio_data:/app/data/audio
+    expose:
+      - "8000"
+
+  web:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile.web
+      args:
+        NEXT_PUBLIC_API_BASE_URL: ${PUBLIC_API_URL:-https://api.decime.online}
+    volumes:
+      - web_static:/export
+    command: ["sh", "-c", "cp -r /out/. /export/"]
+    restart: "no"
+
+  # Production: Caddy on 80/443 with auto TLS (recommended for decime.online)
+  caddy:
+    image: caddy:2-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - web_static:/srv/www:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      api:
+        condition: service_started
+      web:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  # HTTP-only fallback: docker compose --profile http up (no auto TLS)
+  nginx:
+    profiles: ["http"]
+    image: nginx:1.27-alpine
+    ports:
+      - "${HTTP_PORT:-80}:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - web_static:/usr/share/nginx/html:ro
+    depends_on:
+      api:
+        condition: service_started
+      web:
+        condition: service_completed_successfully
+
+volumes:
+  pgdata:
+  audio_data:
+  web_static:
+  caddy_data:
+  caddy_config:

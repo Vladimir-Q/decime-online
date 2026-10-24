@@ -1,0 +1,47 @@
+# Local-AI profile for shared GCP VM (~25 GiB RAM, 2 vCPU).
+#
+# Use WITH docker-compose.local-ai.yml (after it):
+#   docker compose -f docker-compose.yml -f docker-compose.shared-vm.yml \
+#     -f docker-compose.cloudflare-tunnel.yml \
+#     -f docker-compose.local-ai.yml \
+#     -f docker-compose.local-ai.eco.yml \
+#     --profile tunnel up -d --build
+#
+# Goals:
+#   - Give Orpheus/Ollama and Whisper enough RAM (model is ~3.5 GB; 3g caps OOM-killed TTS)
+#   - Stay within 2 vCPU (thread caps), leave headroom for postgres/caddy/n8n
+#   - Prefer Whisper base over tiny for usable Spanish STT
+
+name: decime
+
+services:
+  ollama:
+    environment:
+      OLLAMA_NUM_PARALLEL: "1"
+      OLLAMA_MAX_LOADED_MODELS: "1"
+      OLLAMA_NUM_THREAD: "2"
+      # Keep Orpheus resident — VM has ample RAM; reload every request is too slow.
+      OLLAMA_KEEP_ALIVE: "-1"
+    cpus: 2.0
+    mem_limit: 12g
+
+  orpheus:
+    environment:
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"
+    cpus: 1.5
+    mem_limit: 3g
+
+  api:
+    environment:
+      STT_PROVIDER: faster_whisper
+      # Force base on this VM — enough RAM; tiny was only for tight hosts.
+      WHISPER_MODEL_SIZE: base
+      WHISPER_CPU_THREADS: "2"
+      WHISPER_NUM_WORKERS: "1"
+      TTS_PROVIDER: orpheus
+      OMP_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+    cpus: 2.0
+    mem_limit: 4g

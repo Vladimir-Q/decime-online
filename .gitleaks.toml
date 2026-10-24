@@ -1,0 +1,25 @@
+# Gitleaks config for Decime. Run: scripts/security/scan-secrets.ps1
+# Docs: https://github.com/gitleaks/gitleaks
+
+title = "decime"
+
+[extend]
+useDefault = true
+
+# Intentionally invalid / documentation placeholders that match generic rules.
+[[allowlists]]
+description = "Documented placeholders and Fake LLM test fixtures"
+paths = [
+  '''(.*[/\\])?\.env\.example$''',
+  '''(.*[/\\])?\.env\.production\.example$''',
+  '''(.*[/\\])?\.env\.local\.example$''',
+  '''(.*[/\\])README(\.ru)?\.md$''',
+  '''(.*[/\\])AGENTS\.md$''',
+]
+regexes = [
+  '''sk-\.\.\.''',
+  '''sk-local''',
+  '''sk-test''',
+  '''change-me''',
+  '''invalid-session-token-for-e2e''',
+]

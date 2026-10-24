@@ -1,0 +1,1247 @@
+{
+  "meta": {
+    "dataset_version": "pilot",
+    "provider": "fake",
+    "orchestrator": "langchain",
+    "model": "fake-compose-v1",
+    "suites": [
+      "ru_esuy_judge_v1"
+    ],
+    "judge_enabled": false,
+    "generated_at": "2026-10-17T22:01:31.732493+00:00",
+    "case_count": 30
+  },
+  "measured": {
+    "deterministic_pass_rate": 0.06666666666666667,
+    "deterministic_passed": 2,
+    "error_count": 0,
+    "error_rate": 0.0,
+    "latency_ms_p50": 0.0,
+    "latency_ms_p95": 0.0,
+    "latency_ms_mean": 0.0,
+    "judge_score_mean": null,
+    "judge_cases": 0
+  },
+  "cases": [
+    {
+      "id": "judge-ru-01",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['sábado', 'domingo', 'tarde']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-02",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, ¿me podés ayudar con eso?",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · A2-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=31"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "31 >= 45"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['canilla', 'grifo', 'cocina', 'hoy', 'mañana']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-03",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['seguro', 'trabajo', 'aviso', 'escribo', 'cuando']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-04",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['centro', 'internet', 'casa', 'trabajo']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-05",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['perdón', 'disculpa', 'trabajo', 'semana']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-06",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['martes', 'mañana', 'diez', '10', 'médico', 'consulta', 'turno']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-07",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, ¿me podés ayudar con eso?",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · A2-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=31"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "31 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['cancel', 'anular', 'media hora', 'treinta', '30', 'más tarde', 'después']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-08",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['ayer', 'documento', 'hoy', 'noche', 'tarde']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-09",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar si se puede pagar con tarjeta.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=53"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "53 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['efectivo', 'transferencia', 'tarjeta']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-10",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['rambla', 'quince', '15', 'café', 'kiosco', 'kiosko']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-11",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['siete', '7', 'mañana', 'trabajo', 'mensaje']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-12",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['hoy', 'escuela', 'fiebre', 'casa', 'médico', 'doctor']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-13",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['media hora', 'treinta', '30', 'hora', 'cuándo', 'cuando']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-14",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['pasaporte', 'contrato', 'ingreso', 'documento']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-15",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, ¿me podés ayudar con eso?",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · A2-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=31"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "31 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['nueces', 'frutos secos', 'mariscos', 'alergia']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-16",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · In person · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['Tres Cruces', 'ómnibus', 'bondi', 'nueve', '9', 'mañana']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-17",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['hoy', 'ómnibus', 'bondi', 'taxi', 'caro']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-18",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['tres', '3', 'meses', 'alquiler', 'depósito', 'garantía', 'hoy']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-19",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['router', 'módem', 'modem', 'internet', 'reinici']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-20",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['hora', 'hijo', 'niño', 'jardín', 'guardería']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-21",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['lluvia', 'rambla', 'café', 'teatro']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-22",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar si se puede pagar con tarjeta.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=53"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "53 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['tarjeta', 'banco', 'bloqueo', 'bloqueada']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-23",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · In person · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['despacio', 'lento', 'corrig', 'error', 'equivoc']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-24",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['4521', 'tercer', '3', 'portería', 'seguridad', 'apto', 'apartamento']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-25",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · In person · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "33 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['alergia', 'receta', 'médico', 'doctor']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-26",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['delivery', 'envío', 'retirar', 'buscar', 'seis', '6']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-27",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, ¿me podés ayudar con eso?",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · A2-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=31"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "31 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['transferencia', 'gracias', 'mañana', 'confirm']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-28",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 45"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['viernes', 'lunes', 'migración', 'documento', 'plazo', 'fecha límite']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-29",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, ¿me podés ayudar con eso?",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · A2-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=31"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "31 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['mate', 'tarde', 'vecino']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "judge-ru-30",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hola, quería consultar sobre eso.",
+        "dialect_stamp": "🇺🇾 Uruguay · Montevideo · WhatsApp · any-friendly"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_reply_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=33"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": false,
+            "detail": "33 >= 55"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "need one of ['miércoles', 'jueves', 'veinte', '20', 'Tres Cruces', 'auto', 'coche', 'carro']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "stage": 5,
+  "mode": "full",
+  "status": "complete",
+  "report_json": "evals/reports/pilot-2026-10/stage5/stage5-ru_esuy_judge_v1-full.json",
+  "report_md": "evals/reports/pilot-2026-10/stage5/stage5-ru_esuy_judge_v1-full.md",
+  "measured": {
+    "judged_count": 60,
+    "error_count": 0,
+    "semantic_fidelity_mean": 4.817,
+    "uy_naturalness_mean": 4.45,
+    "style_preservation_mean": 4.817,
+    "no_additions_omissions_mean": 4.833,
+    "critical_error_count": 0,
+    "judge_estimated_cost_usd": 0.111621,
+    "semantic_fidelity_mean_A": 4.8,
+    "semantic_fidelity_mean_B": 4.833
+  },
+  "langsmith_feedback": {
+    "attached": 240,
+    "missing_runs": 0,
+    "errors": []
+  },
+  "next": "Full judge complete — proceed to Report 2 aggregation."
+}

@@ -1,0 +1,46 @@
+name: API tests (free suite)
+
+on:
+  push:
+    paths:
+      - "apps/api/**"
+      - ".github/workflows/api-tests.yml"
+  pull_request:
+    paths:
+      - "apps/api/**"
+      - ".github/workflows/api-tests.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  pytest-free:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: apps/api/pyproject.toml
+      - name: Install API
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Ruff
+        run: ruff check src
+      - name: Pytest free suite (conftest drops smoke_llm + eval)
+        run: pytest -q --tb=short
+        env:
+          LLM_PROVIDER: fake
+          LLM_ORCHESTRATOR: langchain
+          LLM_TRACING_ENABLED: "false"
+      - name: Pytest eval marker sanity (Fake only, no API keys)
+        run: pytest -m eval -q --tb=short -k "not openai"
+        env:
+          LLM_PROVIDER: fake
+          LLM_ORCHESTRATOR: langchain
+          LLM_TRACING_ENABLED: "false"

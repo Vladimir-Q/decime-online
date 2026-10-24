@@ -1,0 +1,37 @@
+# Edge speech: STT/TTS on a Tailscale-connected PC (not on the VM).
+#
+# Standalone — do NOT stack local-ai.yml / eco.yml (no VM ollama/orpheus).
+#
+# In deploy/.env:
+#   EDGE_SPEECH_HOST=100.x.x.x   # Tailscale IP of your PC
+#
+# Canonical compose:
+#   docker compose -f docker-compose.yml -f docker-compose.shared-vm.yml \
+#     -f docker-compose.cloudflare-tunnel.yml \
+#     -f docker-compose.local-ai.edge.yml \
+#     --profile tunnel up -d
+#
+# On the PC (see docs/edge_speech_tailscale.md):
+#   .\scripts\edge\start-all.ps1
+
+name: decime
+
+services:
+  api:
+    environment:
+      # Remote Whisper (OpenAI-compatible) on your PC
+      STT_PROVIDER: openai
+      OPENAI_STT_BASE_URL: http://${EDGE_SPEECH_HOST}:8090/v1
+      OPENAI_STT_MODEL: ${OPENAI_STT_MODEL:-whisper-small}
+      # Remote Orpheus TTS on your PC
+      TTS_PROVIDER: orpheus
+      ORPHEUS_TTS_BASE_URL: http://${EDGE_SPEECH_HOST}:5005
+      ORPHEUS_TTS_VOICE: ${ORPHEUS_TTS_VOICE:-javi}
+      ORPHEUS_TTS_MODEL: orpheus
+      ORPHEUS_OLLAMA_MODEL: ${ORPHEUS_OLLAMA_MODEL:-sematre/orpheus:it_es}
+      OLLAMA_BASE_URL: http://${EDGE_SPEECH_HOST}:11434
+      # Speech lives on the PC — no Docker start/stop of AI on the VM.
+      AI_DOCKER_CONTROL_ENABLED: "false"
+    depends_on:
+      postgres:
+        condition: service_healthy

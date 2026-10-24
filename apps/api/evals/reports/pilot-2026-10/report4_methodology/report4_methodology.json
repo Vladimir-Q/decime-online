@@ -1,0 +1,68 @@
+{
+  "report": 4,
+  "title": "Methodology summary",
+  "generated_at": "2026-10-17T00:00:00+00:00",
+  "status": "complete",
+  "language": "en",
+  "spec": "docs/llm_eval_pilot_spec.md",
+  "models": {
+    "candidate_a": "gpt-5.6-luna",
+    "candidate_b": "gpt-6-luna",
+    "judge": "gpt-5-mini",
+    "prod_text_after_pilot": "gpt-6-luna"
+  },
+  "real_experiments": {
+    "exp1_human": {
+      "suite": "esuy_ru_human_v1",
+      "direction": "es-UY→RU",
+      "n_pairs": 30,
+      "criterion": "style preservation",
+      "counts": {"A_better": 9, "B_better": 18, "equal": 0},
+      "winner": "B"
+    },
+    "exp2_judge": {
+      "suite": "ru_esuy_judge_v1",
+      "direction": "RU→es-UY",
+      "n_pairs": 30,
+      "primary": "semantic_fidelity",
+      "means": {
+        "A": {
+          "semantic_fidelity": 4.8,
+          "uy_naturalness": 4.433,
+          "style_preservation": 4.7,
+          "no_additions_omissions": 4.8
+        },
+        "B": {
+          "semantic_fidelity": 4.833,
+          "uy_naturalness": 4.467,
+          "style_preservation": 4.933,
+          "no_additions_omissions": 4.867
+        }
+      },
+      "primary_pair_counts": {"A_better": 3, "B_better": 4, "equal": 23},
+      "winner_by_primary_count": "B",
+      "critical_errors": {"A": 0, "B": 0},
+      "judge_estimated_cost_usd": 0.111621
+    }
+  },
+  "synthetic": {
+    "disclaimer": "SIMULATED only — does not enlarge real N=30",
+    "effect": "small",
+    "power_sign_test_alpha_0_05": {
+      "n30_small_effect": 0.0525,
+      "n400_small_effect": 0.463,
+      "n400_null": 0.049
+    }
+  },
+  "recommendations": [
+    "Keep gpt-6-luna as default text model",
+    "Treat N=30 as exploratory; expand before confirmatory claims",
+    "Keep real vs synthetic reports strictly separated"
+  ],
+  "artifacts": {
+    "report1": "apps/api/evals/reports/pilot-2026-10/report1_human/",
+    "report2": "apps/api/evals/reports/pilot-2026-10/report2_judge/",
+    "report3": "apps/api/evals/reports/pilot-2026-10/report3_synthetic/",
+    "report4": "apps/api/evals/reports/pilot-2026-10/report4_methodology/"
+  }
+}

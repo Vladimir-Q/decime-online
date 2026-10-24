@@ -1,0 +1,32 @@
+# Optional: Cloudflare Tunnel — no public ports needed for Decime (x-ui keeps :443).
+# Create tunnel at https://one.dash.cloudflare.com → Networks → Tunnels.
+# Public hostnames:
+#   decime.online, www.decime.online → http://caddy:80
+#   api.decime.online              → http://caddy:80  (Caddy routes by Host)
+#
+# Canonical compose (always include speech overlay — edge when EDGE_SPEECH_HOST is set):
+#   ./dc.sh --profile tunnel up -d
+#   ./dc.sh --profile tunnel up -d cloudflared
+# Manual equivalent:
+#   docker compose -f docker-compose.yml -f docker-compose.shared-vm.yml \
+#     -f docker-compose.cloudflare-tunnel.yml \
+#     -f docker-compose.local-ai.edge.yml --profile tunnel up -d
+#
+# With tunnel profile, Caddy does not need host port 80 either:
+
+name: decime
+
+services:
+  caddy:
+    ports: !override []
+
+  cloudflared:
+    profiles: ["tunnel"]
+    image: cloudflare/cloudflared:2026.9.3
+    restart: unless-stopped
+    command: tunnel run
+    environment:
+      TUNNEL_TOKEN: ${CLOUDFLARE_TUNNEL_TOKEN}
+    depends_on:
+      caddy:
+        condition: service_started

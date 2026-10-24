@@ -1,0 +1,16 @@
+{
+  "stage": 3,
+  "generated_at": "2026-10-17T23:04:33.825644+00:00",
+  "suite": "esuy_ru_human_v1",
+  "provider": "openai",
+  "model_a": "gpt-5.6-luna",
+  "model_b": "gpt-6-luna",
+  "report_a": "evals\\reports\\pilot-2026-10\\stage3\\stage3-esuy_ru_human_v1-A-openai.json",
+  "report_b": "evals\\reports\\pilot-2026-10\\stage3\\stage3-esuy_ru_human_v1-B-openai.json",
+  "langsmith": {
+    "project": "decime-eval-pilot",
+    "dataset": "decime-pilot-esuy_ru_human_v1",
+    "experiment_a": "pilot-esuy_ru_human_v1-A-20261017-2304-22b4b364",
+    "experiment_b": "pilot-esuy_ru_human_v1-B-20261017-2304-a6f96b2d"
+  }
+}

@@ -1,0 +1,24 @@
+# Shared VM overlay — does NOT bind :443 or :5432 on the host.
+# Use when other projects already use those ports (e.g. x-ui/xray on 443, bemulator postgres on 5432).
+#
+# Full public HTTPS: put decime.online behind Cloudflare proxy (see deploy/README.md § Shared VM).
+#
+#   cd deploy
+#   docker compose -f docker-compose.yml -f docker-compose.shared-vm.yml up -d --build
+
+name: decime
+
+services:
+  postgres:
+    # Migrations run via API (schema_migrations) — avoid duplicate initdb SQL.
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  caddy:
+    ports: !override
+      - "80:80"
+    volumes:
+      - ./Caddyfile.origin:/etc/caddy/Caddyfile:ro
+      - web_static:/srv/www:ro
+      - caddy_data:/data
+      - caddy_config:/config

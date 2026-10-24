@@ -1,0 +1,30 @@
+# Production reverse proxy — auto HTTPS (Let's Encrypt)
+# See docs/security_brief.md — only ports 80/443 public; API not on :8000
+
+{
+	# Optional: certificate expiry notices (Let's Encrypt)
+	# email you@decime.online
+}
+
+(common_security) {
+	encode gzip
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+}
+
+decime.online, www.decime.online {
+	import common_security
+	root * /srv/www
+	try_files {path} {path}/ {path}/index.html /index.html
+	file_server
+}
+
+api.decime.online {
+	import common_security
+	reverse_proxy api:8000
+}

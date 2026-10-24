@@ -1,0 +1,27 @@
+# Orpheus-FastAPI — Spanish TTS via Ollama sematre/orpheus:it_es (Python 3.11 required).
+FROM python:3.11-slim-bookworm
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git \
+    ffmpeg \
+    gcc \
+    python3-dev \
+    libportaudio2 \
+    portaudio19-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+RUN git clone --depth 1 https://github.com/Lex-au/Orpheus-FastAPI.git .
+
+RUN pip install --no-cache-dir torch torchaudio --index-url https://download.pytorch.org/whl/cpu \
+    && pip install --no-cache-dir -r requirements.txt
+
+ENV ORPHEUS_API_URL=http://ollama:11434/v1/completions
+ENV ORPHEUS_MODEL_NAME=sematre/orpheus:it_es
+ENV ORPHEUS_PORT=5005
+ENV ORPHEUS_HOST=0.0.0.0
+
+EXPOSE 5005
+
+CMD ["python", "app.py"]

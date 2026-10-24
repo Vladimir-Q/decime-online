@@ -1,0 +1,1444 @@
+{
+  "meta": {
+    "dataset_version": "pilot",
+    "provider": "openai",
+    "orchestrator": "langchain",
+    "model": "gpt-6-luna",
+    "model_override": "gpt-6-luna",
+    "suites": [
+      "esuy_ru_human_v1"
+    ],
+    "judge_enabled": false,
+    "generated_at": "2026-10-17T23:04:33.823977+00:00",
+    "case_count": 30
+  },
+  "measured": {
+    "deterministic_pass_rate": 0.9,
+    "deterministic_passed": 27,
+    "error_count": 0,
+    "error_rate": 0.0,
+    "latency_ms_p50": 2061.0,
+    "latency_ms_p95": 2918.0,
+    "latency_ms_mean": 2119.3333333333335,
+    "judge_score_mean": null,
+    "judge_cases": 0
+  },
+  "cases": [
+    {
+      "id": "human-es-01",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Спасибо за приглашение, но в субботу вечером у меня уже кое-что запланировано — если тебе удобно, давай лучше в воскресенье после обеда.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 544,
+        "completion_tokens": 244,
+        "total_tokens": 788,
+        "input_cost_usd": 5.44e-05,
+        "output_cost_usd": 0.000122,
+        "estimated_cost_usd": 0.0001764
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "136"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['суббот', 'воскресень', 'обед', 'приглаш']"
+          }
+        ]
+      },
+      "latency_ms": 2565
+    },
+    {
+      "id": "human-es-02",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Честно говоря, мне уже надоело ждать: три дня назад мне сказали, что посылка придёт сегодня, а новостей до сих пор нет.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 542,
+        "completion_tokens": 213,
+        "total_tokens": 755,
+        "input_cost_usd": 5.42e-05,
+        "output_cost_usd": 0.0001065,
+        "estimated_cost_usd": 0.0001607
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "119"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['пакет', 'дня', 'жд']"
+          }
+        ]
+      },
+      "latency_ms": 2318
+    },
+    {
+      "id": "human-es-03",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Возможно, я приду немного позже, пока ещё не уверен — сообщу, как только узнаю.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 536,
+        "completion_tokens": 84,
+        "total_tokens": 620,
+        "input_cost_usd": 5.36e-05,
+        "output_cost_usd": 4.2e-05,
+        "estimated_cost_usd": 9.56e-05
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "79"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['опозда', 'позже', 'уверен', 'напиш']"
+          }
+        ]
+      },
+      "latency_ms": 1666
+    },
+    {
+      "id": "human-es-04",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Дело не в том, что я не хочу платить, просто сейчас у меня нет наличных — картой могу.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 534,
+        "completion_tokens": 168,
+        "total_tokens": 702,
+        "input_cost_usd": 5.34e-05,
+        "output_cost_usd": 8.4e-05,
+        "estimated_cost_usd": 0.0001374
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "86"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['наличн', 'карт', 'плат']"
+          }
+        ]
+      },
+      "latency_ms": 2061
+    },
+    {
+      "id": "human-es-05",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Скажи честно: ты знал, что по понедельникам это заведение закрывается раньше?",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 534,
+        "completion_tokens": 150,
+        "total_tokens": 684,
+        "input_cost_usd": 5.34e-05,
+        "output_cost_usd": 7.5e-05,
+        "estimated_cost_usd": 0.0001284
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "77"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['понедельник', 'закрыв', 'раньше']"
+          }
+        ]
+      },
+      "latency_ms": 2071
+    },
+    {
+      "id": "human-es-06",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Если в блюде есть арахис или орехи, скажи мне, пожалуйста, потому что у меня аллергия, и я не могу это есть.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 539,
+        "completion_tokens": 249,
+        "total_tokens": 788,
+        "input_cost_usd": 5.39e-05,
+        "output_cost_usd": 0.0001245,
+        "estimated_cost_usd": 0.0001784
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "108"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['аллерг', 'арахис', 'орех']"
+          }
+        ]
+      },
+      "latency_ms": 2573
+    },
+    {
+      "id": "human-es-07",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Нет, я не говорила про среду — я записалась на вторник на одиннадцать утра.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 536,
+        "completion_tokens": 161,
+        "total_tokens": 697,
+        "input_cost_usd": 5.36e-05,
+        "output_cost_usd": 8.05e-05,
+        "estimated_cost_usd": 0.0001341
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "75"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['вторник', 'сред', 'одиннадцат', '11']"
+          }
+        ]
+      },
+      "latency_ms": 1919
+    },
+    {
+      "id": "human-es-08",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Слушай, я правда очень благодарен тебе за то, что ты вчера сходил со мной в больницу. Не знаю, что бы я делал один.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 539,
+        "completion_tokens": 99,
+        "total_tokens": 638,
+        "input_cost_usd": 5.39e-05,
+        "output_cost_usd": 4.95e-05,
+        "estimated_cost_usd": 0.0001034
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "115"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['благодар', 'больниц', 'вчера']"
+          }
+        ]
+      },
+      "latency_ms": 1680
+    },
+    {
+      "id": "human-es-09",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Меня интересует квартира, но я не могу платить за аренду больше 25 тысяч песо. Если есть что-нибудь в этом диапазоне, дай знать.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 545,
+        "completion_tokens": 198,
+        "total_tokens": 743,
+        "input_cost_usd": 5.45e-05,
+        "output_cost_usd": 9.9e-05,
+        "estimated_cost_usd": 0.0001535
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "128"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['25', 'двадцать пять', 'тысяч', 'аренд']"
+          }
+        ]
+      },
+      "latency_ms": 2460
+    },
+    {
+      "id": "human-es-10",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Мы на набережной, чуть дальше большой аптеки — увидишь синий киоск, значит, ты уже почти на месте.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 540,
+        "completion_tokens": 95,
+        "total_tokens": 635,
+        "input_cost_usd": 5.4e-05,
+        "output_cost_usd": 4.75e-05,
+        "estimated_cost_usd": 0.0001015
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "98"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['рамбл', 'аптек', 'киоск']"
+          }
+        ]
+      },
+      "latency_ms": 1391
+    },
+    {
+      "id": "human-es-11",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Сегодня я уже не могу проверить рабочую почту — завтра утром спокойно тебе отвечу.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 536,
+        "completion_tokens": 170,
+        "total_tokens": 706,
+        "input_cost_usd": 5.36e-05,
+        "output_cost_usd": 8.5e-05,
+        "estimated_cost_usd": 0.0001386
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "82"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['завтра', 'почт', 'работ']"
+          }
+        ]
+      },
+      "latency_ms": 2059
+    },
+    {
+      "id": "human-es-12",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Моему сыну плохо в школе; можешь забрать его в три? Я не успею.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 542,
+        "completion_tokens": 160,
+        "total_tokens": 702,
+        "input_cost_usd": 5.42e-05,
+        "output_cost_usd": 8e-05,
+        "estimated_cost_usd": 0.0001342
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "63"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['школ', 'трёх', 'трех', '15', 'забер']"
+          }
+        ]
+      },
+      "latency_ms": 1847
+    },
+    {
+      "id": "human-es-13",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "А, прекрасно, ещё одна задержка — именно этого мне сегодня и не хватало.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 532,
+        "completion_tokens": 177,
+        "total_tokens": 709,
+        "input_cost_usd": 5.32e-05,
+        "output_cost_usd": 8.85e-05,
+        "estimated_cost_usd": 0.0001417
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "72"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['задерж', 'опозда', 'нужн']"
+          }
+        ]
+      },
+      "latency_ms": 2176
+    },
+    {
+      "id": "human-es-14",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Пожалуйста, возьми с собой удостоверение личности и его копию. Без этого тебя не примут, и нужно прийти до полудня.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 548,
+        "completion_tokens": 167,
+        "total_tokens": 715,
+        "input_cost_usd": 5.48e-05,
+        "output_cost_usd": 8.35e-05,
+        "estimated_cost_usd": 0.0001383
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "115"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['удостоверен', 'паспорт', 'ксерокоп', 'копи', 'полдн']"
+          }
+        ]
+      },
+      "latency_ms": 2088
+    },
+    {
+      "id": "human-es-15",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Без острого, пожалуйста. Если есть менее острый вариант рагу, лучше его.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 534,
+        "completion_tokens": 156,
+        "total_tokens": 690,
+        "input_cost_usd": 5.34e-05,
+        "output_cost_usd": 7.8e-05,
+        "estimated_cost_usd": 0.0001314
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "72"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['остр', 'мягк', 'не остр']"
+          }
+        ]
+      },
+      "latency_ms": 1990
+    },
+    {
+      "id": "human-es-16",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Этот автобус довезёт меня до Трес-Крусес? И ещё: можно оплатить картой STM?",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 540,
+        "completion_tokens": 281,
+        "total_tokens": 821,
+        "input_cost_usd": 5.4e-05,
+        "output_cost_usd": 0.0001405,
+        "estimated_cost_usd": 0.0001945
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "forbid_latin_letters"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "75"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": false,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['автобус', 'трес', 'крусес', 'карт']"
+          }
+        ]
+      },
+      "latency_ms": 2918
+    },
+    {
+      "id": "human-es-17",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Извини, что вчера не получилось прийти: из-за пробок всё усложнилось, а ещё у меня разрядился телефон.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 539,
+        "completion_tokens": 316,
+        "total_tokens": 855,
+        "input_cost_usd": 5.39e-05,
+        "output_cost_usd": 0.000158,
+        "estimated_cost_usd": 0.0002119
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "102"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['вчера', 'пробк', 'батар', 'телефон']"
+          }
+        ]
+      },
+      "latency_ms": 3307
+    },
+    {
+      "id": "human-es-18",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Если мы будем снимать жильё, залог равен стоимости аренды за один месяц? Мы могли бы переехать начиная с первого ноября.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 540,
+        "completion_tokens": 166,
+        "total_tokens": 706,
+        "input_cost_usd": 5.4e-05,
+        "output_cost_usd": 8.3e-05,
+        "estimated_cost_usd": 0.000137
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "120"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['залог', 'депозит', 'ноябр', 'месяц']"
+          }
+        ]
+      },
+      "latency_ms": 2005
+    },
+    {
+      "id": "human-es-19",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Попробуй так: выключи роутер, подожди минуту, включи его снова и проверь, появился ли снова Wi‑Fi.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 541,
+        "completion_tokens": 99,
+        "total_tokens": 640,
+        "input_cost_usd": 5.41e-05,
+        "output_cost_usd": 4.95e-05,
+        "estimated_cost_usd": 0.0001036
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "forbid_latin_letters"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "98"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": false,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['роутер', 'маршрутиз', 'wifi', 'вайфай', 'минут']"
+          }
+        ]
+      },
+      "latency_ms": 1635
+    },
+    {
+      "id": "human-es-20",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Хорошо, я приду на встречу, но мне нужно уйти ровно в девять — я не могу задержаться дольше.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 540,
+        "completion_tokens": 199,
+        "total_tokens": 739,
+        "input_cost_usd": 5.4e-05,
+        "output_cost_usd": 9.95e-05,
+        "estimated_cost_usd": 0.0001535
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "92"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['девять', '21', 'уйти', 'встреч']"
+          }
+        ]
+      },
+      "latency_ms": 2174
+    },
+    {
+      "id": "human-es-21",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Если дождь и дальше будет так идти, отменим прогулку по парку и встретимся в кафе недалеко от твоего дома.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 540,
+        "completion_tokens": 96,
+        "total_tokens": 636,
+        "input_cost_usd": 5.4e-05,
+        "output_cost_usd": 4.8e-05,
+        "estimated_cost_usd": 0.000102
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "106"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['дожд', 'парк', 'кафе']"
+          }
+        ]
+      },
+      "latency_ms": 1481
+    },
+    {
+      "id": "human-es-22",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Я сделал перевод час назад, но он до сих пор не отображается. Можете подтвердить, дошёл ли он до вас?",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 539,
+        "completion_tokens": 196,
+        "total_tokens": 735,
+        "input_cost_usd": 5.39e-05,
+        "output_cost_usd": 9.8e-05,
+        "estimated_cost_usd": 0.0001519
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "101"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['перевод', 'час', 'пришл', 'дошл']"
+          }
+        ]
+      },
+      "latency_ms": 2364
+    },
+    {
+      "id": "human-es-23",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Извини, я учу испанский — не мог бы ты сказать это немного помедленнее?",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 536,
+        "completion_tokens": 220,
+        "total_tokens": 756,
+        "input_cost_usd": 5.36e-05,
+        "output_cost_usd": 0.00011,
+        "estimated_cost_usd": 0.0001636
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "71"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['медленн', 'испанск', 'учу']"
+          }
+        ]
+      },
+      "latency_ms": 2579
+    },
+    {
+      "id": "human-es-24",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Код от двери — 4521; если я не отвечу, оставь посылку у консьержа.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 541,
+        "completion_tokens": 93,
+        "total_tokens": 634,
+        "input_cost_usd": 5.41e-05,
+        "output_cost_usd": 4.65e-05,
+        "estimated_cost_usd": 0.0001006
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "66"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['4521', 'пакет', 'консьерж', 'портер', 'вахт']"
+          }
+        ]
+      },
+      "latency_ms": 1515
+    },
+    {
+      "id": "human-es-25",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "У вас есть ибупрофен 400 мг? У меня нет рецепта, он нужен просто от головной боли.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 538,
+        "completion_tokens": 176,
+        "total_tokens": 714,
+        "input_cost_usd": 5.38e-05,
+        "output_cost_usd": 8.8e-05,
+        "estimated_cost_usd": 0.0001418
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "82"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['ибупрофен', '400', 'рецепт', 'голов']"
+          }
+        ]
+      },
+      "latency_ms": 2058
+    },
+    {
+      "id": "human-es-26",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Сегодня я предпочитаю поехать на автобусе, а не на такси — это дорого, да и я не спешу.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 536,
+        "completion_tokens": 133,
+        "total_tokens": 669,
+        "input_cost_usd": 5.36e-05,
+        "output_cost_usd": 6.65e-05,
+        "estimated_cost_usd": 0.0001201
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "87"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['автобус', 'такси', 'дорог']"
+          }
+        ]
+      },
+      "latency_ms": 1817
+    },
+    {
+      "id": "human-es-27",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Фух, наконец-то: нашёл ключи под диваном. Я уже с ума сходил.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 536,
+        "completion_tokens": 198,
+        "total_tokens": 734,
+        "input_cost_usd": 5.36e-05,
+        "output_cost_usd": 9.9e-05,
+        "estimated_cost_usd": 0.0001526
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "61"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['ключ', 'диван', 'нашёл', 'нашел']"
+          }
+        ]
+      },
+      "latency_ms": 2404
+    },
+    {
+      "id": "human-es-28",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Мне нужно, чтобы ты прислал мне подписанные документы до пятницы, до пяти часов вечера, иначе всё задержится.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 543,
+        "completion_tokens": 177,
+        "total_tokens": 720,
+        "input_cost_usd": 5.43e-05,
+        "output_cost_usd": 8.85e-05,
+        "estimated_cost_usd": 0.0001428
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "109"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['пятниц', 'пять', '17', 'документ', 'бумаг']"
+          }
+        ]
+      },
+      "latency_ms": 2138
+    },
+    {
+      "id": "human-es-29",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Если после обеда у тебя будет свободный час, заходи попить мате — там ещё будет сосед из нашего дома.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 543,
+        "completion_tokens": 220,
+        "total_tokens": 763,
+        "input_cost_usd": 5.43e-05,
+        "output_cost_usd": 0.00011,
+        "estimated_cost_usd": 0.0001643
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "101"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['мате', 'матэ', 'сосед', 'обед']"
+          }
+        ]
+      },
+      "latency_ms": 2363
+    },
+    {
+      "id": "human-es-30",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Я могу в субботу утром. Плачу только через Mercado Pago, и общая сумма не должна превышать две тысячи песо.",
+        "translation_en": null
+      },
+      "usage": {
+        "model": "gpt-6-luna",
+        "prompt_tokens": 539,
+        "completion_tokens": 155,
+        "total_tokens": 694,
+        "input_cost_usd": 5.39e-05,
+        "output_cost_usd": 7.75e-05,
+        "estimated_cost_usd": 0.0001314
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "forbid_latin_letters"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "107"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": false,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['суббот', 'меркадо', '2000', 'две тысяч']"
+          }
+        ]
+      },
+      "latency_ms": 1958
+    }
+  ]
+}

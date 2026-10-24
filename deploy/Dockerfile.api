@@ -1,0 +1,22 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY apps/api/pyproject.toml apps/api/pyproject.toml
+COPY apps/api/src apps/api/src
+COPY supabase/migrations supabase/migrations
+COPY scripts/test_user_isolation_vm.py scripts/vm_internal_e2e.py scripts/
+
+RUN pip install --no-cache-dir -e "./apps/api[dev,local-stt]"
+
+ENV PYTHONPATH=/app/apps/api/src
+WORKDIR /app/apps/api
+
+EXPOSE 8000
+
+CMD ["uvicorn", "decime_api.main:app", "--host", "0.0.0.0", "--port", "8000", "--app-dir", "src"]

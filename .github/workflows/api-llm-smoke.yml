@@ -1,0 +1,52 @@
+name: API LLM smoke (manual / paid)
+
+# Does NOT run on every push. Requires repository secrets:
+#   OPENAI_API_KEY
+# Text path is LangChain + OpenAI-compatible only (LLM_ORCHESTRATOR=langchain).
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_eval:
+        description: "Also run paid compose eval suite (DECIME_RUN_EVAL)"
+        required: true
+        default: false
+        type: boolean
+
+# Manual only — do not grant write permissions; secrets are repo-level and
+# must never be exposed to untrusted fork PR workflows.
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: apps/api/pyproject.toml
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Live OpenAI smoke
+        run: pytest -m smoke_llm -q --tb=short
+        env:
+          DECIME_LLM_SMOKE: "1"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LLM_ORCHESTRATOR: langchain
+          LLM_TRACING_ENABLED: "false"
+      - name: Optional paid eval (compose_ru_esuy)
+        if: ${{ inputs.run_eval }}
+        run: pytest -m eval -q --tb=short -k openai_compose
+        env:
+          DECIME_RUN_EVAL: "1"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LLM_ORCHESTRATOR: langchain
+          LLM_TRACING_ENABLED: "false"

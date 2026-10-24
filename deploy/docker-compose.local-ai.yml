@@ -1,0 +1,67 @@
+# Hybrid AI on VM: OpenAI (text) + faster-whisper (STT) + Orpheus/Ollama (TTS).
+#
+#   docker compose -f docker-compose.yml -f docker-compose.shared-vm.yml \
+#     -f docker-compose.cloudflare-tunnel.yml -f docker-compose.local-ai.yml up -d --build
+
+name: decime
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama_data:/root/.ollama
+    expose:
+      - "11434"
+    healthcheck:
+      test: ["CMD-SHELL", "ollama list >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 12
+      start_period: 40s
+
+  orpheus:
+    build:
+      context: .
+      dockerfile: Dockerfile.orpheus
+    restart: unless-stopped
+    environment:
+      ORPHEUS_API_URL: http://ollama:11434/v1/completions
+      ORPHEUS_MODEL_NAME: ${ORPHEUS_OLLAMA_MODEL:-sematre/orpheus:it_es}
+      ORPHEUS_PORT: "5005"
+      ORPHEUS_HOST: 0.0.0.0
+    depends_on:
+      ollama:
+        condition: service_healthy
+    expose:
+      - "5005"
+
+  api:
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+      orpheus:
+        condition: service_started
+    environment:
+      STT_PROVIDER: faster_whisper
+      WHISPER_MODEL_SIZE: ${WHISPER_MODEL_SIZE:-base}
+      TTS_PROVIDER: orpheus
+      ORPHEUS_TTS_BASE_URL: http://orpheus:5005
+      ORPHEUS_TTS_VOICE: ${ORPHEUS_TTS_VOICE:-javi}
+      ORPHEUS_TTS_MODEL: orpheus
+      ORPHEUS_OLLAMA_MODEL: ${ORPHEUS_OLLAMA_MODEL:-sematre/orpheus:it_es}
+      # Admin AI power page: start/stop ollama+orpheus and warm Orpheus.
+      AI_DOCKER_CONTROL_ENABLED: "true"
+      AI_DOCKER_PROJECT: decime
+      AI_DOCKER_SOCKET: /var/run/docker.sock
+      OLLAMA_BASE_URL: http://ollama:11434
+    volumes:
+      - audio_data:/app/data/audio
+      - whisper_cache:/root/.cache/huggingface
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  whisper_cache:
+  ollama_data:

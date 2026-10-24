@@ -1,0 +1,18 @@
+---
+description: Keep RU/EN UI strings in sync in app-language.ts
+globs: apps/web/src/lib/app-language.ts
+alwaysApply: false
+---
+
+# UI copy (RU / EN)
+
+All user-visible interface strings live in [`apps/web/src/lib/app-language.ts`](apps/web/src/lib/app-language.ts).
+
+When the user edits **Russian** (`STRINGS.ru` / keys in `UiStrings`):
+
+1. Update the matching **English** key in `STRINGS.en` in the same change.
+2. Keep meaning aligned; do not leave EN on an older wording.
+3. New keys: add to `UiStrings`, then `ru` and `en`.
+4. Prefer committing RU+EN together so production/APK never ship mismatched languages.
+
+Do not hardcode button/label text in TSX when a `t.*` key already exists or should be added.

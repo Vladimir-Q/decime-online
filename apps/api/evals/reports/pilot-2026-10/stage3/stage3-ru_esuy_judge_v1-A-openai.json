@@ -1,0 +1,1438 @@
+{
+  "meta": {
+    "dataset_version": "pilot",
+    "provider": "openai",
+    "orchestrator": "langchain",
+    "model": "gpt-5.6-luna",
+    "model_override": "gpt-5.6-luna",
+    "suites": [
+      "ru_esuy_judge_v1"
+    ],
+    "judge_enabled": false,
+    "generated_at": "2026-10-17T23:11:22.199809+00:00",
+    "case_count": 30
+  },
+  "measured": {
+    "deterministic_pass_rate": 1.0,
+    "deterministic_passed": 30,
+    "error_count": 0,
+    "error_rate": 0.0,
+    "latency_ms_p50": 3000.0,
+    "latency_ms_p95": 4349.0,
+    "latency_ms_mean": 3054.6,
+    "judge_score_mean": null,
+    "judge_cases": 0
+  },
+  "cases": [
+    {
+      "id": "judge-ru-01",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Gracias por la invitación, pero el sábado de noche ya estoy ocupado; mejor el domingo después del mediodía, si a vos también te queda bien.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1107,
+        "completion_tokens": 146,
+        "total_tokens": 1253,
+        "input_cost_usd": 0.0002214,
+        "output_cost_usd": 0.0001752,
+        "estimated_cost_usd": 0.0003966
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=139"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "139 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['sábado', 'domingo', 'tarde']"
+          }
+        ]
+      },
+      "latency_ms": 4753
+    },
+    {
+      "id": "judge-ru-02",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Ya escribí tres veces por la canilla que pierde en la cocina y hasta ahora nadie vino. De verdad necesito ayuda hoy o, por lo menos, mañana de mañana.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1124,
+        "completion_tokens": 157,
+        "total_tokens": 1281,
+        "input_cost_usd": 0.0002248,
+        "output_cost_usd": 0.0001884,
+        "estimated_cost_usd": 0.0004132
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=150"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "150 >= 45"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['canilla', 'grifo', 'cocina', 'hoy', 'mañana']"
+          }
+        ]
+      },
+      "latency_ms": 2435
+    },
+    {
+      "id": "judge-ru-03",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Todavía no estoy cien por ciento seguro de a qué hora termino de trabajar, pero apenas lo sepa, te escribo enseguida.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1102,
+        "completion_tokens": 222,
+        "total_tokens": 1324,
+        "input_cost_usd": 0.0002204,
+        "output_cost_usd": 0.0002664,
+        "estimated_cost_usd": 0.0004868
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=117"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "117 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['seguro', 'trabajo', 'aviso', 'escribo', 'cuando']"
+          }
+        ]
+      },
+      "latency_ms": 3213
+    },
+    {
+      "id": "judge-ru-04",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Necesito un apartamento no solo cerca del centro, sino también con una conexión a internet decente, porque trabajo desde casa.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1103,
+        "completion_tokens": 182,
+        "total_tokens": 1285,
+        "input_cost_usd": 0.0002206,
+        "output_cost_usd": 0.0002184,
+        "estimated_cost_usd": 0.000439
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=126"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "126 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['centro', 'internet', 'casa', 'trabajo']"
+          }
+        ]
+      },
+      "latency_ms": 2642
+    },
+    {
+      "id": "judge-ru-05",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Perdoná, no encontraba el momento para contestarte; esta semana tuve un montón de trabajo.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1102,
+        "completion_tokens": 121,
+        "total_tokens": 1223,
+        "input_cost_usd": 0.0002204,
+        "output_cost_usd": 0.0001452,
+        "estimated_cost_usd": 0.0003656
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=90"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "90 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['perdón', 'disculpa', 'trabajo', 'semana']"
+          }
+        ]
+      },
+      "latency_ms": 2801
+    },
+    {
+      "id": "judge-ru-06",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Si hay algún lugar disponible, me gustaría agendarme con un terapeuta para el martes de mañana, de ser posible antes de las diez.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1102,
+        "completion_tokens": 130,
+        "total_tokens": 1232,
+        "input_cost_usd": 0.0002204,
+        "output_cost_usd": 0.000156,
+        "estimated_cost_usd": 0.0003764
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=129"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "129 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['martes', 'mañana', 'diez', '10', 'médico', 'consulta', 'turno']"
+          }
+        ]
+      },
+      "latency_ms": 2233
+    },
+    {
+      "id": "judge-ru-07",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "No, no, yo no dije que cancelaba la reunión; solo pedí pasarla media hora más tarde.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1117,
+        "completion_tokens": 232,
+        "total_tokens": 1349,
+        "input_cost_usd": 0.0002234,
+        "output_cost_usd": 0.0002784,
+        "estimated_cost_usd": 0.0005018
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=84"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "84 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['cancel', 'anular', 'media hora', 'treinta', '30', 'más tarde', 'después']"
+          }
+        ]
+      },
+      "latency_ms": 3623
+    },
+    {
+      "id": "judge-ru-08",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Ayer me diste una mano enorme con la traducción de los documentos. Si no es mucha molestia, ¿podés darle otra mirada a un párrafo hoy de tarde?",
+        "dialect_stamp": "es-UY, Montevideo"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1107,
+        "completion_tokens": 362,
+        "total_tokens": 1469,
+        "input_cost_usd": 0.0002214,
+        "output_cost_usd": 0.0004344,
+        "estimated_cost_usd": 0.0006558
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=143"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "143 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['ayer', 'documento', 'hoy', 'noche', 'tarde']"
+          }
+        ]
+      },
+      "latency_ms": 4228
+    },
+    {
+      "id": "judge-ru-09",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Es mejor no pagar en efectivo; puedo hacer una transferencia o pagar con tarjeta, como le quede más cómodo.",
+        "dialect_stamp": "español uruguayo rioplatense"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1099,
+        "completion_tokens": 263,
+        "total_tokens": 1362,
+        "input_cost_usd": 0.0002198,
+        "output_cost_usd": 0.0003156,
+        "estimated_cost_usd": 0.0005354
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=107"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "107 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['efectivo', 'transferencia', 'tarjeta']"
+          }
+        ]
+      },
+      "latency_ms": 3368
+    },
+    {
+      "id": "judge-ru-10",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Nos encontramos en la rambla, al lado de ese quiosco donde compramos café la otra vez, en unos quince minutos.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1110,
+        "completion_tokens": 242,
+        "total_tokens": 1352,
+        "input_cost_usd": 0.000222,
+        "output_cost_usd": 0.0002904,
+        "estimated_cost_usd": 0.0005124
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=110"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "110 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['rambla', 'quince', '15', 'café', 'kiosco', 'kiosko']"
+          }
+        ]
+      },
+      "latency_ms": 3187
+    },
+    {
+      "id": "judge-ru-11",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Después de las siete de la tarde ya no miro los mensajes de trabajo; escribime, por favor, mañana de mañana, y te respondo.",
+        "dialect_stamp": "Uruguayan Spanish (Montevideo)"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1105,
+        "completion_tokens": 140,
+        "total_tokens": 1245,
+        "input_cost_usd": 0.000221,
+        "output_cost_usd": 0.000168,
+        "estimated_cost_usd": 0.000389
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=123"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "123 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['siete', '7', 'mañana', 'trabajo', 'mensaje']"
+          }
+        ]
+      },
+      "latency_ms": 2575
+    },
+    {
+      "id": "judge-ru-12",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Hoy mi hijo no va a ir a la escuela: tiene fiebre desde anoche y el médico dijo que se quedara en casa al menos 24 horas.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1101,
+        "completion_tokens": 249,
+        "total_tokens": 1350,
+        "input_cost_usd": 0.0002202,
+        "output_cost_usd": 0.0002988,
+        "estimated_cost_usd": 0.000519
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=121"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "121 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['hoy', 'escuela', 'fiebre', 'casa', 'médico', 'doctor']"
+          }
+        ]
+      },
+      "latency_ms": 3254
+    },
+    {
+      "id": "judge-ru-13",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Y sí, los «cinco minutos» ya pasaron hace media hora; díganme la verdad, ¿más o menos a qué hora van a estar?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1103,
+        "completion_tokens": 357,
+        "total_tokens": 1460,
+        "input_cost_usd": 0.0002206,
+        "output_cost_usd": 0.0004284,
+        "estimated_cost_usd": 0.000649
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=109"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "109 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['media hora', 'treinta', '30', 'hora', 'cuándo', 'cuando']"
+          }
+        ]
+      },
+      "latency_ms": 4349
+    },
+    {
+      "id": "judge-ru-14",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "¿Me podrían indicar, por favor, qué documentos tengo que llevar: solamente el pasaporte y el contrato, o también una constancia de ingresos?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1102,
+        "completion_tokens": 214,
+        "total_tokens": 1316,
+        "input_cost_usd": 0.0002204,
+        "output_cost_usd": 0.0002568,
+        "estimated_cost_usd": 0.0004772
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=140"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "140 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['pasaporte', 'contrato', 'ingreso', 'documento']"
+          }
+        ]
+      },
+      "latency_ms": 3149
+    },
+    {
+      "id": "judge-ru-15",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Pedime algo sin frutos secos y sin mariscos: soy alérgico a los dos.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1114,
+        "completion_tokens": 118,
+        "total_tokens": 1232,
+        "input_cost_usd": 0.0002228,
+        "output_cost_usd": 0.0001416,
+        "estimated_cost_usd": 0.0003644
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=68"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "68 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['nueces', 'frutos secos', 'mariscos', 'alergia']"
+          }
+        ]
+      },
+      "latency_ms": 2253
+    },
+    {
+      "id": "judge-ru-16",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "¿Cómo me conviene llegar a Tres Cruces antes de las nueve de la mañana: en ómnibus o queda lejos para ir caminando desde mi parada?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1104,
+        "completion_tokens": 163,
+        "total_tokens": 1267,
+        "input_cost_usd": 0.0002208,
+        "output_cost_usd": 0.0001956,
+        "estimated_cost_usd": 0.0004164
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=131"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "131 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['Tres Cruces', 'ómnibus', 'bondi', 'nueve', '9', 'mañana']"
+          }
+        ]
+      },
+      "latency_ms": 2559
+    },
+    {
+      "id": "judge-ru-17",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Disculpe, hoy no voy a poder ir a clase: se rompió el ómnibus y el taxi está muy caro ahora.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1103,
+        "completion_tokens": 131,
+        "total_tokens": 1234,
+        "input_cost_usd": 0.0002206,
+        "output_cost_usd": 0.0001572,
+        "estimated_cost_usd": 0.0003778
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=92"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "92 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['hoy', 'ómnibus', 'bondi', 'taxi', 'caro']"
+          }
+        ]
+      },
+      "latency_ms": 2207
+    },
+    {
+      "id": "judge-ru-18",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Si alquilo por tres meses de una, ¿se puede bajar un poco el precio del alquiler? Estoy dispuesto a pagar el depósito hoy.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1101,
+        "completion_tokens": 276,
+        "total_tokens": 1377,
+        "input_cost_usd": 0.0002202,
+        "output_cost_usd": 0.0003312,
+        "estimated_cost_usd": 0.0005514
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=122"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "122 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['tres', '3', 'meses', 'alquiler', 'depósito', 'garantía', 'hoy']"
+          }
+        ]
+      },
+      "latency_ms": 3546
+    },
+    {
+      "id": "judge-ru-19",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Ya reinicié el router dos veces, pero internet igual aparece y desaparece. ¿Qué más se puede hacer?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1106,
+        "completion_tokens": 137,
+        "total_tokens": 1243,
+        "input_cost_usd": 0.0002212,
+        "output_cost_usd": 0.0001644,
+        "estimated_cost_usd": 0.0003856
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=99"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "99 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['router', 'módem', 'modem', 'internet', 'reinici']"
+          }
+        ]
+      },
+      "latency_ms": 2326
+    },
+    {
+      "id": "judge-ru-20",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Paso con gusto, pero no voy a poder quedarme más de una hora; después tengo que ir a buscar a mi hijo al jardín.",
+        "dialect_stamp": "español rioplatense uruguayo"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1101,
+        "completion_tokens": 142,
+        "total_tokens": 1243,
+        "input_cost_usd": 0.0002202,
+        "output_cost_usd": 0.0001704,
+        "estimated_cost_usd": 0.0003906
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=112"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "112 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['hora', 'hijo', 'niño', 'jardín', 'guardería']"
+          }
+        ]
+      },
+      "latency_ms": 2279
+    },
+    {
+      "id": "judge-ru-21",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Si llueve fuerte, no caminemos por la rambla; mejor nos encontramos en el café de enfrente al teatro.",
+        "dialect_stamp": "es-UY rioplatense"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1105,
+        "completion_tokens": 347,
+        "total_tokens": 1452,
+        "input_cost_usd": 0.000221,
+        "output_cost_usd": 0.0004164,
+        "estimated_cost_usd": 0.0006374
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=101"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "101 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['lluvia', 'rambla', 'café', 'teatro']"
+          }
+        ]
+      },
+      "latency_ms": 4030
+    },
+    {
+      "id": "judge-ru-22",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Me bloquearon la tarjeta después de una operación extraña y estoy un poco nervioso/a. ¿Qué tengo que llevar a la sucursal del banco?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1104,
+        "completion_tokens": 141,
+        "total_tokens": 1245,
+        "input_cost_usd": 0.0002208,
+        "output_cost_usd": 0.0001692,
+        "estimated_cost_usd": 0.00039
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=132"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "132 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['tarjeta', 'banco', 'bloqueo', 'bloqueada']"
+          }
+        ]
+      },
+      "latency_ms": 2191
+    },
+    {
+      "id": "judge-ru-23",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Todavía me cuesta entender cuando hablan rápido; ¿podés hablar un poco más despacio y corregirme si me equivoco?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1101,
+        "completion_tokens": 135,
+        "total_tokens": 1236,
+        "input_cost_usd": 0.0002202,
+        "output_cost_usd": 0.000162,
+        "estimated_cost_usd": 0.0003822
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=112"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "112 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['despacio', 'lento', 'corrig', 'error', 'equivoc']"
+          }
+        ]
+      },
+      "latency_ms": 2327
+    },
+    {
+      "id": "judge-ru-24",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "El repartidor puede dejar el pedido en la portería. El código de la reja es 4521; el apartamento está en el tercer piso y no tiene portero eléctrico.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1108,
+        "completion_tokens": 345,
+        "total_tokens": 1453,
+        "input_cost_usd": 0.0002216,
+        "output_cost_usd": 0.000414,
+        "estimated_cost_usd": 0.0006356
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=149"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "149 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['4521', 'tercer', '3', 'portería', 'seguridad', 'apto', 'apartamento']"
+          }
+        ]
+      },
+      "latency_ms": 4138
+    },
+    {
+      "id": "judge-ru-25",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "¿Me puede decir si este medicamento para la alergia se vende sin receta o si igual primero tengo que ir al médico?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1100,
+        "completion_tokens": 128,
+        "total_tokens": 1228,
+        "input_cost_usd": 0.00022,
+        "output_cost_usd": 0.0001536,
+        "estimated_cost_usd": 0.0003736
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=114"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "114 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['alergia', 'receta', 'médico', 'doctor']"
+          }
+        ]
+      },
+      "latency_ms": 2132
+    },
+    {
+      "id": "judge-ru-26",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "No hace falta que me lo envíen; me sale más barato y es más rápido pasar yo a retirar el pedido después del trabajo, alrededor de las seis.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1102,
+        "completion_tokens": 227,
+        "total_tokens": 1329,
+        "input_cost_usd": 0.0002204,
+        "output_cost_usd": 0.0002724,
+        "estimated_cost_usd": 0.0004928
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=139"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "139 >= 40"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['delivery', 'envío', 'retirar', 'buscar', 'seis', '6']"
+          }
+        ]
+      },
+      "latency_ms": 3000
+    },
+    {
+      "id": "judge-ru-27",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "¡Uf, por fin vi la traducción! Muchas gracias. Entonces, ¿está todo confirmado para mañana?",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1111,
+        "completion_tokens": 122,
+        "total_tokens": 1233,
+        "input_cost_usd": 0.0002222,
+        "output_cost_usd": 0.0001464,
+        "estimated_cost_usd": 0.0003686
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=91"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "91 >= 30"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['transferencia', 'gracias', 'mañana', 'confirm']"
+          }
+        ]
+      },
+      "latency_ms": 2210
+    },
+    {
+      "id": "judge-ru-28",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Para mí es muy importante recibir una respuesta antes del viernes, porque el lunes vence el plazo para presentar la documentación en Migración.",
+        "dialect_stamp": "Uruguayan Spanish (Montevideo)"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1103,
+        "completion_tokens": 288,
+        "total_tokens": 1391,
+        "input_cost_usd": 0.0002206,
+        "output_cost_usd": 0.0003456,
+        "estimated_cost_usd": 0.0005662
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=143"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "143 >= 45"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['viernes', 'lunes', 'migración', 'documento', 'plazo', 'fecha límite']"
+          }
+        ]
+      },
+      "latency_ms": 3431
+    },
+    {
+      "id": "judge-ru-29",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Si tienen una hora libre después del almuerzo, pasen a tomar mate; va a haber otro vecino del edificio. No es nada formal.",
+        "dialect_stamp": "español uruguayo de Montevideo"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1115,
+        "completion_tokens": 268,
+        "total_tokens": 1383,
+        "input_cost_usd": 0.000223,
+        "output_cost_usd": 0.0003216,
+        "estimated_cost_usd": 0.0005446
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=122"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "122 >= 35"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['mate', 'tarde', 'vecino']"
+          }
+        ]
+      },
+      "latency_ms": 3502
+    },
+    {
+      "id": "judge-ru-30",
+      "suite": "ru_esuy_judge_v1",
+      "dataset_file": "ru_esuy_judge_v1.jsonl",
+      "output": {
+        "recommended_reply": "Busco un profesor particular de español para el miércoles o jueves de noche, con un presupuesto de hasta veinte dólares la hora, y, si es posible, cerca de Tres Cruces; sin auto me queda lejos ir.",
+        "dialect_stamp": "es-UY"
+      },
+      "usage": {
+        "model": "gpt-5.6-luna",
+        "prompt_tokens": 1121,
+        "completion_tokens": 270,
+        "total_tokens": 1391,
+        "input_cost_usd": 0.0002242,
+        "output_cost_usd": 0.000324,
+        "estimated_cost_usd": 0.0005482
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_reply",
+            "passed": true,
+            "detail": "len=196"
+          },
+          {
+            "name": "min_reply_chars",
+            "passed": true,
+            "detail": "196 >= 55"
+          },
+          {
+            "name": "forbid_cyrillic_in_reply",
+            "passed": true,
+            "detail": "reply must be Latin-script Spanish"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "need one of ['miércoles', 'jueves', 'veinte', '20', 'Tres Cruces', 'auto', 'coche', 'carro']"
+          }
+        ]
+      },
+      "latency_ms": 3697
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+# Attach Decime API to the shared external network used by n8n on the VM.
+# Optional overlay — included automatically by ./dc.sh and scripts/bootstrap-vm.sh.
+# Does not modify postgres publish ports or overwrite other compose overlays.
+#
+#   cd deploy
+#   ./dc.sh --profile tunnel up -d --build
+#
+# n8n reaches the API at http://decime-api:8000
+# API reaches n8n webhooks at http://n8n:5678/webhook/...
+
+networks:
+  decime_n8n:
+    external: true
+
+services:
+  api:
+    networks:
+      default:
+      decime_n8n:
+        aliases:
+          - decime-api

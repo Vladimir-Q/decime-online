@@ -1,0 +1,1232 @@
+{
+  "meta": {
+    "dataset_version": "pilot",
+    "provider": "fake",
+    "orchestrator": "langchain",
+    "model": "fake-compose-v1",
+    "suites": [
+      "esuy_ru_human_v1"
+    ],
+    "judge_enabled": false,
+    "generated_at": "2026-10-17T22:05:21.710059+00:00",
+    "case_count": 30
+  },
+  "measured": {
+    "deterministic_pass_rate": 0.03333333333333333,
+    "deterministic_passed": 1,
+    "error_count": 0,
+    "error_rate": 0.0,
+    "latency_ms_p50": 0.0,
+    "latency_ms_p95": 0.0,
+    "latency_ms_mean": 0.0,
+    "judge_score_mean": null,
+    "judge_cases": 0
+  },
+  "cases": [
+    {
+      "id": "human-es-01",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['суббот', 'воскресень', 'обед', 'приглаш']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-02",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['пакет', 'дня', 'жд']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-03",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['опозда', 'позже', 'уверен', 'напиш']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-04",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Можно оплатить картой?",
+        "translation_en": "Can I pay by card?"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "min_chars"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "22"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['наличн', 'карт', 'плат']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-05",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['понедельник', 'закрыв', 'раньше']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-06",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['аллерг', 'арахис', 'орех']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-07",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['вторник', 'сред', 'одиннадцат', '11']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-08",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['благодар', 'больниц', 'вчера']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-09",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['25', 'двадцать пять', 'тысяч', 'аренд']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-10",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['рамбл', 'аптек', 'киоск']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-11",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['завтра', 'почт', 'работ']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-12",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['школ', 'трёх', 'трех', '15', 'забер']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-13",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['задерж', 'опозда', 'нужн']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-14",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['удостоверен', 'паспорт', 'ксерокоп', 'копи', 'полдн']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-15",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['остр', 'мягк', 'не остр']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-16",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Можно оплатить картой?",
+        "translation_en": "Can I pay by card?"
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "min_chars"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "22"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['автобус', 'трес', 'крусес', 'карт']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-17",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['вчера', 'пробк', 'батар', 'телефон']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-18",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['залог', 'депозит', 'ноябр', 'месяц']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-19",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['роутер', 'маршрутиз', 'wifi', 'вайфай', 'минут']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-20",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['девять', '21', 'уйти', 'встреч']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-21",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['дожд', 'парк', 'кафе']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-22",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": true,
+        "passed_checks": 4,
+        "total_checks": 4,
+        "failed": [],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": true,
+            "detail": "['перевод', 'час', 'пришл', 'дошл']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-23",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['медленн', 'испанск', 'учу']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-24",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['4521', 'пакет', 'консьерж', 'портер', 'вахт']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-25",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['ибупрофен', '400', 'рецепт', 'голов']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-26",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['автобус', 'такси', 'дорог']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-27",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['ключ', 'диван', 'нашёл', 'нашел']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-28",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['пятниц', 'пять', '17', 'документ', 'бумаг']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-29",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 3,
+        "total_checks": 4,
+        "failed": [
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": true,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['мате', 'матэ', 'сосед', 'обед']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    },
+    {
+      "id": "human-es-30",
+      "suite": "esuy_ru_human_v1",
+      "dataset_file": "esuy_ru_human_v1.jsonl",
+      "output": {
+        "translation_ru": "Демо-перевод входящего сообщения.",
+        "translation_en": "Demo translation of the incoming message."
+      },
+      "deterministic": {
+        "passed": false,
+        "passed_checks": 2,
+        "total_checks": 4,
+        "failed": [
+          "min_chars",
+          "must_contain_any"
+        ],
+        "checks": [
+          {
+            "name": "non_empty_translation",
+            "passed": true,
+            "detail": "field=translation_ru"
+          },
+          {
+            "name": "min_chars",
+            "passed": false,
+            "detail": "33"
+          },
+          {
+            "name": "forbid_latin_letters",
+            "passed": true,
+            "detail": "translation_ru"
+          },
+          {
+            "name": "must_contain_any",
+            "passed": false,
+            "detail": "['суббот', 'меркадо', '2000', 'две тысяч']"
+          }
+        ]
+      },
+      "latency_ms": 0
+    }
+  ]
+}

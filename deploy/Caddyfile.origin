@@ -1,0 +1,31 @@
+# Origin Caddy — HTTP on :80 only (TLS terminates at Cloudflare Tunnel edge).
+# Use with: docker-compose.shared-vm.yml + cloudflare-tunnel.yml
+# cloudflared routes to http://caddy:80 — must listen on port 80 inside the container.
+
+{
+	auto_https off
+	http_port 80
+	https_port 0
+}
+
+(common_security) {
+	encode gzip
+	header {
+		X-Content-Type-Options nosniff
+		X-Frame-Options DENY
+		Referrer-Policy strict-origin-when-cross-origin
+		-Server
+	}
+}
+
+http://decime.online, http://www.decime.online {
+	import common_security
+	root * /srv/www
+	try_files {path} {path}/ {path}/index.html /index.html
+	file_server
+}
+
+http://api.decime.online {
+	import common_security
+	reverse_proxy api:8000
+}

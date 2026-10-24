@@ -1,0 +1,79 @@
+{
+  "report": 3,
+  "title": "Synthetic statistical analysis (SIMULATED)",
+  "disclaimer": "All rows are simulated. Do NOT treat N=400 as enlarging the real N=30 pilot. Not evidence of real model superiority.",
+  "generated_at": "2026-10-17T23:51:13.318672+00:00",
+  "effect_size_scenario": "small",
+  "human_sim": {
+    "name": "synthetic_human_esuy_ru_400",
+    "params": {
+      "p_a": 0.38,
+      "p_b": 0.47,
+      "p_equal": 0.15,
+      "seed": 20261017,
+      "n": 400,
+      "criterion": "style_preservation"
+    },
+    "summary": {
+      "n": 400,
+      "counts": {
+        "A_better": 135,
+        "B_better": 215,
+        "equal": 50
+      },
+      "win_rate_a": 0.3375,
+      "win_rate_a_ci95": [
+        0.29,
+        0.385
+      ],
+      "win_rate_b": 0.5375,
+      "win_rate_b_ci95": [
+        0.4875,
+        0.5875
+      ],
+      "equal_rate": 0.125,
+      "sign_test_pvalue_ties_dropped": 2.2e-05,
+      "simulated": true
+    }
+  },
+  "judge_sim": {
+    "name": "synthetic_judge_ru_esuy_400",
+    "params": {
+      "mean_a": 4.7,
+      "bias_b": 0.12,
+      "noise_sd": 0.45,
+      "seed": 20261024,
+      "n": 400,
+      "primary": "semantic_fidelity"
+    },
+    "summary": {
+      "n": 400,
+      "primary": "semantic_fidelity",
+      "pair_counts": {
+        "A_better": 53,
+        "equal": 274,
+        "B_better": 73
+      },
+      "mean_score_a": 4.532,
+      "mean_score_b": 4.593,
+      "mean_paired_diff_b_minus_a": 0.06,
+      "mean_paired_diff_ci95": [
+        0.0,
+        0.12
+      ],
+      "sign_test_pvalue_ties_dropped": 0.090123,
+      "critical_rate_a": 0.0075,
+      "critical_rate_b": 0.0225,
+      "simulated": true
+    }
+  },
+  "power_sensitivity": {
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "method": "monte_carlo_sign_test_ties_dropped",
+    "small_effect_power_n30": 0.0525,
+    "small_effect_power_n400": 0.463,
+    "null_effect_power_n400": 0.049,
+    "note": "N=30 real pilot is underpowered for small effects; N=400 is synthetic only."
+  }
+}

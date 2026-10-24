@@ -1,0 +1,102 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+apps/web/.next/
+apps/web/out/
+
+# Capacitor Android (keep source; ignore build artifacts)
+apps/web/android/.gradle/
+apps/web/android/build/
+apps/web/android/app/build/
+apps/web/android/local.properties
+apps/web/android/.idea/
+apps/web/android/capacitor-cordova-android-plugins/
+*.jks
+*.keystore
+
+# Python
+apps/api/.venv/
+apps/api/**/__pycache__/
+apps/api/**/*.py[cod]
+apps/api/.pytest_cache/
+apps/api/.ruff_cache/
+apps/api/dist/
+apps/api/*.egg-info/
+apps/web/tsconfig.tsbuildinfo
+
+# Local runtime data
+data/
+
+# Environment
+.env
+.env.local
+.env.*.local
+apps/web/.env.local
+deploy/.env
+deploy/.env.vm.tmp
+deploy/.env.production
+deploy/backups/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing / coverage
+coverage/
+htmlcov/
+.coverage
+
+# Supabase local
+.supabase/
+
+# Local secrets / keys
+*.pem
+*.key
+*.p12
+
+# Edge speech local runtime
+.venv-edge/
+scripts/edge/.run/
+scripts/edge/_*.py
+scripts/edge/_*.json
+scripts/edge/_*.wav
+
+# Internal / sensitive docs (keep locally; do not publish)
+docs/conversation_log.md
+docs/handoff_edge_speech_2026-09-29.md
+
+# Adb / UI dump scratch (local QA)
+.tmp_*.xml
+window_dump*.xml
+tmp_view*.xml
+uidump.xml
+dark_test*.xml
+qr1.xml
+emu_screen.png
+test-es.mp3
+
+# Local deploy / scratch archives
+_deploy_*.zip
+*.zip.bak
+
+# Transient eval outputs (keep committed pilot reports under pilot-2026-10/)
+apps/api/evals/reports/dbg.*
+apps/api/evals/reports/tmp-*.json
+apps/api/evals/reports/tmp-*.md
+apps/api/evals/reports/eval-v1-fake-legacy.*
+
+# Local QA scratch under docs (screenshots/audio from device sessions)
+docs/reports/qa-*/
+
+# Private publication audit outputs (never commit)
+_decime_publication_audit/
