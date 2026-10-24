@@ -120,8 +120,8 @@ Paid LLM smoke / eval: **not run** (by design).
 | Fresh clone reproducibility | PASS |
 | Infrastructure docs | PASS WITH LIMITATIONS |
 | Dependencies | PASS WITH LIMITATIONS (advisories logged; no drive-by upgrades) |
-| License | BLOCKED (owner decision) |
+| License | PASS (PolyForm Noncommercial 1.0.0) |
 | Demo materials | PASS WITH LIMITATIONS (none committed) |
 | Repository metadata | NOT VERIFIED (remote settings unchanged) |
 
-**Overall (this clean copy):** **PUBLICATION READY — awaiting owner approval** for remote create/push, visibility, and license. Do not push until the maintainer confirms.
+**Overall (this clean copy):** **PUBLICATION READY — awaiting owner approval** for remote create/push and visibility. License is PolyForm Noncommercial 1.0.0. Do not push until the maintainer confirms.

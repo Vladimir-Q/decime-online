@@ -156,8 +156,8 @@ Default text model after the pilot: **`gpt-6-luna`**.
 Needs: Python 3.11+, Node.js 20+, Git. An OpenAI (or compatible) key for real translation. Speech (Whisper / Orpheus) is optional for a text-only run.
 
 ```bash
-git clone https://github.com/Vladimir-Q/decime.git decime
-cd decime
+git clone https://github.com/Vladimir-Q/decime-online.git decime-online
+cd decime-online
 cp .env.example .env
 ```
 
@@ -225,5 +225,9 @@ Unit/integration success ≠ full production E2E for every integration (especial
 - Runtime prompts default to **local** files; LangSmith tag resolution is implemented but not enabled as the production default.
 - n8n / Google Sheets exist at the API/workflow level.
 - Phase 8 (pre-beta) continues — [docs/mvp_tasks.md](docs/mvp_tasks.md).
+
+## License
+
+Source code is licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE). Commercial use requires a separate permission from the licensor.
 
 **Next:** [Engineering case study](docs/case-study.md) · [docs/README.md](docs/README.md) · [AGENTS.md](AGENTS.md)

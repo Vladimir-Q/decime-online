@@ -135,7 +135,7 @@ cd apps/web && npm run dev
 - [x] **LLM eval pilot** — Reports 1–4 complete ([r1](llm_eval_report1.md)–[r4](llm_eval_report4.md)); prod text = `gpt-6-luna`. Report 1 human Equal count corrected to **3/30** (rebuild from saved labels; no LLM).
 - [x] Ruff pinned to 0.17.1; sheets jobs cannot leave `completed`/`failed`; LLM cost uses a versioned catalog (`unknown_price` instead of a silent mini fallback).
 - [x] LangSmith prompt commits for the four live operations. `staging` and `v1-0-0` point at the baseline. `DECIME_PROMPT_SOURCE` remains `local`. `production` tag is not set. See [langsmith_prompt_management.md](langsmith_prompt_management.md).
-- [ ] **Public Git readiness** — this clean-history copy is prepared for publish; license + owner push still required. See [publication-readiness.md](publication-readiness.md).
+- [ ] **Public Git readiness** — this clean-history copy (decime-online) uses PolyForm Noncommercial 1.0.0; owner push still required. See [publication-readiness.md](publication-readiness.md).
 
 ## Out of scope
 

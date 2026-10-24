@@ -156,8 +156,8 @@ Report 3 — **симулированные** human-like и judge-like пары 
 Нужны: Python 3.11+, Node.js 20+, Git. Ключ OpenAI (или совместимого API) для реального перевода. Речь (Whisper / Orpheus) опциональна для text-only запуска.
 
 ```bash
-git clone https://github.com/Vladimir-Q/decime.git decime
-cd decime
+git clone https://github.com/Vladimir-Q/decime-online.git decime-online
+cd decime-online
 cp .env.example .env
 ```
 
@@ -226,5 +226,9 @@ npm run dev
 - n8n / Google Sheets есть на уровне API/workflow.
 - Phase 8 (pre-beta) продолжается — [docs/mvp_tasks.md](docs/mvp_tasks.md).
 
+
+## Лицензия
+
+Исходный код распространяется по [PolyForm Noncommercial License 1.0.0](LICENSE). Коммерческое использование требует отдельного разрешения правообладателя.
 
 **Дальше:** [Инженерный case study](docs/case-study.ru.md) · [docs/README.md](docs/README.md) · [AGENTS.md](AGENTS.md)
